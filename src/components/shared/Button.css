@@ -22,25 +22,25 @@
 }
 
 .button--inverse {
-  background: transparent;
-  color: #ff0055;
+  background: rgb(0, 132, 255);
+  color: white;
 }
 
 .button--inverse:hover,
 .button--inverse:active {
   color: white;
-  background: #ff0055;
+  background: rgba(0, 132, 255, 0.473);
 }
 
 .button--danger {
-  background: #830000;
-  border-color: #830000;
+  background: #ff0055;
+  border-color: #ff0055;
 }
 
 .button--danger:hover,
 .button--danger:active {
-  background: #f34343;
-  border-color: #f34343;
+  background: #ff005563;
+  border-color: #ff005563;
 }
 
 .button:disabled,
@@ -54,6 +54,7 @@
 
 .button--small {
   font-size: 0.8rem;
+ width: 70px;
 }
 
 .button--big {

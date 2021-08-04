@@ -1,0 +1,34 @@
+.todo-list {
+  display: flex;
+  justify-content: center;
+  margin-right: 20px;
+}
+ul {
+  width: 100%;
+  padding-left: 20px;
+}
+li {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 1px solid black;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.todo-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.checkbox-title {
+  margin-left: 10px;
+}
+.checkbox {
+  filter: hue-rotate(240deg);
+}
+input[type="checkbox"] {
+  transform: scale(1.5);
+  margin: 10px;
+  cursor: pointer;
+}
