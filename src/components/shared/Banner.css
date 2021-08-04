@@ -1,0 +1,12 @@
+.banner {
+  margin: 20px 10px;
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid rgb(182, 42, 182);
+  border-radius: 10px;
+}
+.closeIcon {
+  color: rgb(182, 42, 182);
+  background-color: transparent;
+  border: none;
+}

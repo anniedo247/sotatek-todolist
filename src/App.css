@@ -1,0 +1,99 @@
+/* * {
+  box-sizing: border-box;
+} */
+.main-container {
+  margin-top: 50px;
+  min-height: 100vh;
+  width: 75%;
+  border: 0.01px solid black;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  
+}
+.main-container__item {
+  border: 0.01px solid black;
+  text-align: center;
+}
+
+.left {
+  width: 100%;
+}
+
+.right {
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px){
+  .left {
+    width: 40%;
+  }
+  
+  .right {
+    width: 60%;
+  }
+  .main-container {
+    flex-direction: row;
+  } 
+}
+/*----form----*/
+
+.row {
+  display: flex;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 25px;
+  justify-content: space-between;
+  align-items: center;
+}
+.colum-display {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.textInput {
+  width: 93%;
+  margin-right: 10px;
+  margin-left: 10px;
+  height: 30px;
+  margin-bottom: 25px;
+  outline: none;
+}
+.textInput:focus {
+  border: 1px solid rgba(3, 109, 3, 0.363);
+}
+.textarea {
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 25px;
+  
+
+}
+.textareaInput:focus {
+  outline: none !important;
+  border: 1px solid rgba(3, 109, 3, 0.363);
+}
+.width45 {
+  width: 45%;
+}
+.dateInput {
+  height: 30px;
+}
+.priorityInput {
+  height: 35px;
+  
+}
+.label {
+font-family: 'Source Sans Pro';
+font-size: 12px;
+font-weight: bold;
+font-style: normal;
+text-decoration: none;
+margin-bottom: 10px;
+
+}
+
