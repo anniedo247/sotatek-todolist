@@ -8,8 +8,9 @@ const Search = ({onSubmit,onChange,searchInput}) => {
 
   return (
     <div className="search-bar">
-      <form onSubmit={onSubmit}>
+      <form >
         <input
+          type='text'
           onChange={onChange}
           value={searchInput}
           placeholder=" Search..."
