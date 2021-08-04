@@ -4,7 +4,7 @@ export const ACTIONS = {
   ADD: 'add',
   SAVE: 'save',
   REMOVE: 'remove',
-  CLEAR: 'reset',
+  CLEAR: 'clear',
 };
 
 export const TodoReducer = (state, action) => {
@@ -37,6 +37,7 @@ export const TodoReducer = (state, action) => {
     
     case ACTIONS.REMOVE:
       return state.filter((item) => item.id !== action.payload.id);
+
     case ACTIONS.CLEAR:
       return (state = []);
     default:

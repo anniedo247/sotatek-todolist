@@ -16,13 +16,13 @@ const AddToDo = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [dueDate, setDueDate] = useState(date);
-  const [priority, setPriority] = useState("Normal");
+  const [priority, setPriority] = useState("normal");
 
   const clearData = () => {
     setTitle("");
     setDescription("");
     setDueDate(date);
-    setPriority("Normal");
+    setPriority("normal");
   };
 
   const handleSubmit = (event) => {
@@ -35,7 +35,7 @@ const AddToDo = () => {
         title: title.toLowerCase(),
         description,
         dueDate,
-        priority
+        priority,
       },
     });
 
@@ -43,15 +43,15 @@ const AddToDo = () => {
       setSubmitted(true);
       setTimeout(() => {
         setSubmitted(false);
-      }, 2000);
+      }, 4000);
       setLoading(false);
       clearData();
     }, 2000);
   };
-  
+
   return (
     <div>
-      <h1> New Task</h1>
+      <h2> New Task</h2>
       <container>
         <form onSubmit={handleSubmit}>
           <div>
@@ -69,7 +69,7 @@ const AddToDo = () => {
               <label className="label">Description</label>
               <textarea
                 className="textareaInput"
-                rows="5"
+                rows="8"
                 name="description"
                 value={description}
                 disabled={loading}
@@ -96,25 +96,28 @@ const AddToDo = () => {
                   className="priorityInput"
                   name="priority"
                   value={priority}
-                  onChange={(e) => e.target.value}
+                  onChange={(e) => setPriority(e.target.value)}
                 >
-             
-                 
                   <option value="low">Low</option>
-                  <option selected value="normal">
-                    Normal
-                  </option>
+                  <option value="normal">Normal</option>
                   <option value="high">High</option>
                 </select>
               </div>
             </div>
-            <Button type="submit" size="big" >
-              {loading? 'Adding...':'ADD'}
-            </Button>
+            {loading ? (
+              <Button disabled="true" size="big">
+                Adding...
+              </Button>
+            ) : (
+              <Button type="submit" size="big">
+                ADD
+              </Button>
+            )}
           </div>
         </form>
-        {submitted && (<Banner text="A new to-do has been added to your list!" />
-)}
+        {submitted && (
+          <Banner text="A new to-do has been added to your list!" />
+        )}
       </container>
     </div>
   );
