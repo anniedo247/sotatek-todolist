@@ -32,3 +32,25 @@ input[type="checkbox"] {
   margin: 10px;
   cursor: pointer;
 }
+.bulk-action {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: gainsboro;
+  border-top: 1px solid black;
+  width: 59.8%;
+  height: 60px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+
+}
+.bulk-action p {
+  margin-left: 10px;
+}
+.bulk-action__button {
+  display: flex;
+  flex-direction: row;
+
+}
