@@ -5,9 +5,9 @@ import { HiOutlineTrash } from "react-icons/hi";
 import Button from "../shared/Button";
 import ToDoDetails from "./ToDoDetails";
 
-export const TodoCard = ({ item, dispatch}) => {
+export const TodoCard = ({ item, dispatch }) => {
   const [showDetails, setShowDetails] = useState(false);
-  
+
   const handleClose = () => {
     setShowDetails(false);
   };

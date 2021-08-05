@@ -4,7 +4,7 @@ import { TodoContext } from "../context/TodoContext";
 import { ACTIONS } from "../reducer/TodoReducer";
 import Button from "../shared/Button";
 import Search from "../shared/Search";
-import TodoCard from "../UI/TodoCard";
+import TodoCard from "./TodoCard";
 
 const ToDoList = () => {
   const { todos, dispatch } = useContext(TodoContext);
@@ -14,13 +14,11 @@ const ToDoList = () => {
   const handleSearchChange = (e) => {
     setSearchInput(e.target.value);
   };
-  
-  const handleBatchRemove = () => {    
-      dispatch({
-        type: ACTIONS.BATCH_REMOVE,
-        payload: {
-        },
-      }); 
+
+  const handleBatchRemove = () => {
+    dispatch({
+      type: ACTIONS.BATCH_REMOVE,
+    });
   };
   useEffect(() => {
     let newTodos = todos
@@ -45,13 +43,10 @@ const ToDoList = () => {
                     <Button
                       inverse="inverse"
                       size="medium"
-                      onClick={()=>{
+                      onClick={() => {
                         dispatch({
                           type: ACTIONS.RESET,
-                          payload: {
-                            selected : item.selected
-                          }
-                        })
+                        });
                       }}
                     >
                       Reset

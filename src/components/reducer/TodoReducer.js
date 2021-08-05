@@ -5,7 +5,7 @@ export const ACTIONS = {
   EDIT: "edit",
   GET: "get",
   REMOVE: "remove",
-  BATCH_REMOVE:"batch_remove",
+  BATCH_REMOVE: "batch_remove",
   RESET: "reset",
 };
 
@@ -53,7 +53,7 @@ export const TodoReducer = (state, action) => {
       return state.filter((item) => item.id !== action.payload.id);
 
     case ACTIONS.BATCH_REMOVE:
-      return state.filter((item)=>!item.selected)
+      return state.filter((item) => !item.selected);
 
     case ACTIONS.RESET:
       return state.map((item) => {

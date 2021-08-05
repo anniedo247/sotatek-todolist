@@ -1,6 +1,47 @@
-# Getting Started with Create React App
+# Table of Contents
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Main features](#main-features)
+  - [Technologies](#technologies)
+  - [Screenshot/Gifs](#screenshotgifs)
+  - [Available Scripts](#available-scripts)
+    - [`npm start`](#npm-start)
+    - [`npm test`](#npm-test)
+    - [`npm run build`](#npm-run-build)
+    - [`npm run eject`](#npm-run-eject)
+  - [Learn More](#learn-more)
+    - [Code Splitting](#code-splitting)
+    - [Analyzing the Bundle Size](#analyzing-the-bundle-size)
+    - [Making a Progressive Web App](#making-a-progressive-web-app)
+    - [Advanced Configuration](#advanced-configuration)
+    - [Deployment](#deployment)
+    - [`npm run build` fails to minify](#npm-run-build-fails-to-minify)
+
+## Introduction
+
+This project is a a to-do list app, bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Main features
+
+- Allows a user to add new task to the to-do list.
+- View and update existing ones.
+- Bulk actions: remove multiple tasks, unselected multiple tasks.
+
+## Technologies
+
+- React for UI components
+- Context API (useContext) to pass data through the component tree
+- useState hook for managing changes in state
+- Local storage for persisting data
+- Styling with CSS
+- _uuid_ package for generating random IDs, which are then used to differentiate each to-do item, and acts as the slug for to-do items
+
+## Screenshot/Gifs
+
+![Home](assets/todo-screenshot1.png)
+
+![Bulk Actions](assets/todo-screenshot1.png)
 
 ## Available Scripts
 
