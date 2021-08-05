@@ -43,10 +43,10 @@ const AddToDo = () => {
       setSubmitted(true);
       setTimeout(() => {
         setSubmitted(false);
-      }, 4000);
+      }, 1000);
       setLoading(false);
       clearData();
-    }, 2000);
+    }, 1000);
   };
 
   return (

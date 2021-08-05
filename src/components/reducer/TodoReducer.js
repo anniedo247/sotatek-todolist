@@ -17,8 +17,8 @@ export const TodoReducer = (state, action) => {
           title: action.payload.title,
           description: action.payload.description,
           dueDate: action.payload.dueDate,
-          priority: action.payload.priority
-          
+          priority: action.payload.priority,
+          selected: false
         },
       ];
     case ACTIONS.SAVE: {
@@ -35,6 +35,16 @@ export const TodoReducer = (state, action) => {
         return item;
       });
     }
+    case ACTIONS.TOGGLE:
+      return state.map((item) => {
+        if (item.id === action.payload.id) {
+          return {
+            ...item,
+            selected: !item.selected,
+          };
+        }
+        return item;
+      });
     
     case ACTIONS.REMOVE:
       return state.filter((item) => item.id !== action.payload.id);

@@ -5,7 +5,6 @@ import { HiOutlineX } from "react-icons/hi";
 
 const ToDoDetails = ({ item, handleClose, dispatch}) => {
   const [loading, setLoading] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
   const [title, setTitle] = useState(item.title);
   const [description, setDescription] = useState(item.description);
   const [dueDate, setDueDate] = useState(item.dueDate);
