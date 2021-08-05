@@ -1,17 +1,39 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import Button from "../shared/Button";
+import { ACTIONS } from "../reducer/TodoReducer";
+import { HiOutlineX } from "react-icons/hi";
 
-const ToDoDetails = ({item,handleClose,handleSubmit}) => {
-  const [loading,setLoading] = useState(false);
-  const [title, setTitle]=useState(item.title);
-  const [description, setDescription]=useState(item.description);
-  const [dueDate, setDueDate]=useState(item.dueDate);
-  const [priority, setPriority]=useState(item.priority);
+const ToDoDetails = ({ item, handleClose, dispatch }) => {
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [title, setTitle] = useState(item.title);
+  const [description, setDescription] = useState(item.description);
+  const [dueDate, setDueDate] = useState(item.dueDate);
+  const [priority, setPriority] = useState(item.priority);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    dispatch({
+      type: ACTIONS.SAVE,
+      payload: {
+        id: item.id,
+        title: title.toLowerCase(),
+        description,
+        dueDate,
+        priority,
+      },
+    });
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+  };
 
   return (
     <div>
-      <form onSubmit={()=>handleSubmit(item.id)}>
+      <form onSubmit={handleSubmit}>
         <div>
           <input
             className="textInput"
@@ -20,7 +42,7 @@ const ToDoDetails = ({item,handleClose,handleSubmit}) => {
             name="title"
             required
             value={title}
-            onChange={(e)=>setTitle(e.target.value)}
+            onChange={(e) => setTitle(e.target.value)}
           />
           <div className="colum-display textarea">
             <label className="label">Description</label>
@@ -30,7 +52,7 @@ const ToDoDetails = ({item,handleClose,handleSubmit}) => {
               name="description"
               placeholder={description}
               value={description}
-              onChange={(e)=>setDescription(e.target.value)}
+              onChange={(e) => setDescription(e.target.value)}
             />
           </div>
 
@@ -42,7 +64,7 @@ const ToDoDetails = ({item,handleClose,handleSubmit}) => {
                 type="date"
                 defaultValue={dueDate}
                 value={dueDate}
-                onChange={(e)=> setDueDate(e.target.value)}
+                onChange={(e) => setDueDate(e.target.value)}
                 name="dueDate"
               />
             </div>
@@ -52,7 +74,7 @@ const ToDoDetails = ({item,handleClose,handleSubmit}) => {
                 className="priorityInput"
                 name="priority"
                 value={priority}
-                onChange={(e)=>setPriority(e.target.value)}
+                onChange={(e) => setPriority(e.target.value)}
               >
                 <option value="low">Low</option>
                 <option value="normal">Normal</option>
@@ -60,20 +82,22 @@ const ToDoDetails = ({item,handleClose,handleSubmit}) => {
               </select>
             </div>
           </div>
-          <div className='view-detail-btn'>
+          <div>
             {loading ? (
-              <Button disabled="true" size="small">
+              <Button disabled="true" size="big">
                 Updating...
               </Button>
             ) : (
-              <Button type="submit" size="medium" >
+              <Button type="submit" size="big">
                 UPDATE
               </Button>
             )}
-            <Button onClick={handleClose} size="medium" danger='danger' className='detail-btn'>CANCEl</Button>
           </div>
         </div>
       </form>
+      <div className="close-details" >
+      <HiOutlineX size="20" style={{cursor:'pointer'}} onClick={handleClose}/>
+      </div>
     </div>
   );
 };

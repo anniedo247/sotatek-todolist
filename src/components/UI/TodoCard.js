@@ -5,12 +5,10 @@ import { HiOutlineTrash } from "react-icons/hi";
 import Button from "../shared/Button";
 import ToDoDetails from "./ToDoDetails";
 
-export const TodoCard = ({ item, dispatch, handleClose }) => {
+export const TodoCard = ({ item, dispatch }) => {
   const [showDetails, setShowDetails] = useState(false);
-
-
-  const handleUpdate = (e) => {
-    
+  const handleClose = ()=> {
+    setShowDetails(false)
   }
 
   return (
@@ -48,7 +46,7 @@ export const TodoCard = ({ item, dispatch, handleClose }) => {
       </div>
 
     <div>
-      {showDetails && <ToDoDetails item={item} handleClose={handleClose} handleSubmit={handleUpdate}/>}
+      {showDetails && <ToDoDetails item={item} handleClose={handleClose} dispatch={dispatch}/>}
     </div>
       </div>
       
