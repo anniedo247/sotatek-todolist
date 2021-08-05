@@ -25,6 +25,7 @@ This project is a to-do app, bootstrapped with [Create React App](https://github
 ## Main features
 
 - Allow a user to add new task to the to-do list.
+- User can search tasks by task title.
 - View and update existing ones.
 - Bulk actions: remove multiple tasks, unselected multiple tasks.
 
