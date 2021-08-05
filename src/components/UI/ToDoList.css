@@ -18,6 +18,9 @@
   border: 1px solid rgba(0, 0, 0, 0.493);
   margin-bottom: 10px;
 }
+.todo-list {
+  margin-bottom: 90px;
+}
 .todo-card__wraper {
   display: flex;
   justify-content: center;
@@ -48,6 +51,7 @@ input[type="checkbox"] {
   margin: 10px;
   cursor: pointer;
 }
+
 /*-----bulk action -----*/
 .bulk-action {
   display: flex;

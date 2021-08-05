@@ -53,12 +53,14 @@
 }
 
 .button--small {
- font-size: 14px;
-  width: 80px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 14px;
+  width: 60px;
 }
 .button--medium {
- font-size:14px;
- width: 100px;
+  font-size: 14px;
+  width: 100px;
 }
 
 .button--big {

@@ -11,6 +11,12 @@ export const TodoCard = ({ item, dispatch }) => {
   const handleClose = () => {
     setShowDetails(false);
   };
+  const truncateText = (text, length) => {
+    if (text.length > length) {
+      return text.slice(0, length - 1) + "...";
+    }
+    return text;
+  };
 
   return (
     <React.Fragment>
@@ -23,17 +29,20 @@ export const TodoCard = ({ item, dispatch }) => {
                 type="checkbox"
                 id={item.id}
                 checked={item.selected}
-                onClick={() =>
+                onClick={() => {
                   dispatch({
                     type: ACTIONS.TOGGLE,
                     payload: {
                       id: item.id,
                     },
-                  })
-                }
+                  });
+                }}
               />
               <p className="checkbox-title">
-                {item.title.charAt(0).toUpperCase() + item.title.slice(1)}
+                {truncateText(
+                  item.title.charAt(0).toUpperCase() + item.title.slice(1),
+                  13
+                )}
               </p>
             </div>
             <div className="todo-item">
