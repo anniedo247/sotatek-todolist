@@ -14,17 +14,13 @@ const ToDoList = () => {
   const handleSearchChange = (e) => {
     setSearchInput(e.target.value);
   };
-  const handleBatchDelete = () => {
-    const selectedTodos = todos.filter((t) => t.selected === true);
-    console.log('selected',selectedTodos)
-    for (let i=0;i< selectedTodos.length;i++) {
+  
+  const handleBatchRemove = () => {    
       dispatch({
-        type: ACTIONS.REMOVE,
+        type: ACTIONS.BATCH_REMOVE,
         payload: {
-          id: selectedTodos[i].id,
         },
-      });
-    }
+      }); 
   };
   useEffect(() => {
     let newTodos = todos
@@ -46,13 +42,24 @@ const ToDoList = () => {
                 <div className="bulk-action">
                   <p>Bulk Action:</p>
                   <div className="bulk-action__button">
-                    <Button inverse="inverse" size="medium">
-                      Done
+                    <Button
+                      inverse="inverse"
+                      size="medium"
+                      onClick={()=>{
+                        dispatch({
+                          type: ACTIONS.RESET,
+                          payload: {
+                            selected : item.selected
+                          }
+                        })
+                      }}
+                    >
+                      Reset
                     </Button>
                     <Button
                       danger="danger"
                       size="medium"
-                      onClick={handleBatchDelete}
+                      onClick={handleBatchRemove}
                     >
                       Remove
                     </Button>

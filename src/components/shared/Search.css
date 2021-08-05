@@ -10,11 +10,16 @@
   margin-right: 10px;
   margin-left: 10px;
   height: 30px;
-  margin-bottom: 25px;
-  
+  margin-bottom: 50px;
 }
 
 .search-bar-input:focus {
   outline: none;
   border: 1px solid rgba(3, 109, 3, 0.363);
+}
+.search-icon {
+  position: absolute;
+  right: 20px;
+  top: 30%;
+  transform: translateY(-50%);
 }

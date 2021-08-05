@@ -39,14 +39,13 @@ const AddToDo = () => {
       },
     });
 
+    setSubmitted(true);
     setTimeout(() => {
-      setSubmitted(true);
-      setTimeout(() => {
-        setSubmitted(false);
-      }, 1000);
-      setLoading(false);
-      clearData();
-    }, 1000);
+      setSubmitted(false);
+    }, 2000);
+
+    clearData();
+    setLoading(false);
   };
 
   return (
@@ -76,7 +75,6 @@ const AddToDo = () => {
                 onChange={(e) => setDescription(e.target.value)}
               />
             </div>
-
             <div className="row">
               <div className="colum-display width45">
                 <label className="label">Due Date</label>

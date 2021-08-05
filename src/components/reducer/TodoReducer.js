@@ -1,11 +1,12 @@
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
 export const ACTIONS = {
-  ADD: 'add',
-  SAVE: 'save',
-  GET: 'get',
-  REMOVE: 'remove',
-  CLEAR: 'clear',
+  ADD: "add",
+  EDIT: "edit",
+  GET: "get",
+  REMOVE: "remove",
+  BATCH_REMOVE:"batch_remove",
+  RESET: "reset",
 };
 
 export const TodoReducer = (state, action) => {
@@ -13,15 +14,16 @@ export const TodoReducer = (state, action) => {
     case ACTIONS.ADD:
       return [
         ...state,
-        { id: uuidv4(),
+        {
+          id: uuidv4(),
           title: action.payload.title,
           description: action.payload.description,
           dueDate: action.payload.dueDate,
           priority: action.payload.priority,
-          selected: false
+          selected: false,
         },
       ];
-    case ACTIONS.SAVE: {
+    case ACTIONS.EDIT: {
       return state.map((item) => {
         if (item.id === action.payload.id) {
           return {
@@ -30,7 +32,8 @@ export const TodoReducer = (state, action) => {
             title: action.payload.title,
             description: action.payload.description,
             dueDate: action.payload.dueDate,
-            priority: action.payload.priority          };
+            priority: action.payload.priority,
+          };
         }
         return item;
       });
@@ -45,12 +48,20 @@ export const TodoReducer = (state, action) => {
         }
         return item;
       });
-    
+
     case ACTIONS.REMOVE:
       return state.filter((item) => item.id !== action.payload.id);
 
-    case ACTIONS.CLEAR:
-      return (state = []);
+    case ACTIONS.BATCH_REMOVE:
+      return state.filter((item)=>!item.selected)
+
+    case ACTIONS.RESET:
+      return state.map((item) => {
+        return {
+          ...item,
+          selected: false,
+        };
+      });
     default:
       return state;
   }

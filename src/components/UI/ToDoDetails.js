@@ -3,7 +3,7 @@ import Button from "../shared/Button";
 import { ACTIONS } from "../reducer/TodoReducer";
 import { HiOutlineX } from "react-icons/hi";
 
-const ToDoDetails = ({ item, handleClose, dispatch}) => {
+const ToDoDetails = ({ item, handleClose, dispatch }) => {
   const [loading, setLoading] = useState(false);
   const [title, setTitle] = useState(item.title);
   const [description, setDescription] = useState(item.description);
@@ -15,7 +15,7 @@ const ToDoDetails = ({ item, handleClose, dispatch}) => {
     setLoading(true);
 
     dispatch({
-      type: ACTIONS.SAVE,
+      type: ACTIONS.EDIT,
       payload: {
         id: item.id,
         title: title.toLowerCase(),
@@ -27,7 +27,7 @@ const ToDoDetails = ({ item, handleClose, dispatch}) => {
 
     setTimeout(() => {
       setLoading(false);
-    }, 3000);
+    }, 1000);
   };
 
   return (
@@ -94,8 +94,12 @@ const ToDoDetails = ({ item, handleClose, dispatch}) => {
           </div>
         </div>
       </form>
-      <div className="close-details" >
-      <HiOutlineX size="20" style={{cursor:'pointer'}} onClick={handleClose}/>
+      <div className="close-details">
+        <HiOutlineX
+          size="20"
+          style={{ cursor: "pointer" }}
+          onClick={handleClose}
+        />
       </div>
     </div>
   );

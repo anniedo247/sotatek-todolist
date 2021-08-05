@@ -3,7 +3,7 @@ import './Search.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
-const Search = ({onSubmit,onChange,searchInput}) => {
+const Search = ({onChange,searchInput}) => {
   
 
   return (
@@ -20,12 +20,7 @@ const Search = ({onSubmit,onChange,searchInput}) => {
           icon={faSearch}
           size="lg"
           color="black"
-          style={{
-            position: "absolute",
-            right: "20px",
-            top: "30%",
-            transform: "translateY(-50%)",
-          }}
+          className="search-icon"
         />
       </form>
     </div>

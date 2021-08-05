@@ -8,7 +8,6 @@ import ToDoDetails from "./ToDoDetails";
 export const TodoCard = ({ item, dispatch}) => {
   const [showDetails, setShowDetails] = useState(false);
   
-
   const handleClose = () => {
     setShowDetails(false);
   };
@@ -62,7 +61,6 @@ export const TodoCard = ({ item, dispatch}) => {
             </div>
           </div>
         </div>
-
         <div>
           {showDetails && (
             <ToDoDetails
