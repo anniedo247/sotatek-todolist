@@ -96,4 +96,8 @@ text-decoration: none;
 margin-bottom: 10px;
 
 }
-
+.view-detail-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}

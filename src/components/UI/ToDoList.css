@@ -1,25 +1,27 @@
-.todo-list {
+/* .todo-list {
   display: flex;
   justify-content: center;
   margin-right: 20px;
+} */
+
+.card-wraper {
+  display: flex;
+  justify-content: center;
 }
-ul {
-  width: 100%;
-  padding-left: 20px;
-}
-li {
+.todo-card {
   list-style: none;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   border: 1px solid black;
   margin-bottom: 20px;
-  width: 100%;
+  width: 90%;
 }
 .todo-item {
   display: flex;
   flex-direction: row;
   align-items: center;
+  
 }
 .checkbox-title {
   margin-left: 10px;

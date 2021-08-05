@@ -1,74 +1,81 @@
-import React from 'react'
-import Button from '../shared/Button'
+import React,{useState} from "react";
+import Button from "../shared/Button";
 
-const ToDoDetails = () => {
+const ToDoDetails = ({item,handleClose,handleSubmit}) => {
+  const [loading,setLoading] = useState(false);
+  const [title, setTitle]=useState(item.title);
+  const [description, setDescription]=useState(item.description);
+  const [dueDate, setDueDate]=useState(item.dueDate);
+  const [priority, setPriority]=useState(item.priority);
+
+
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-          <div>
-            <input
-              className="textInput"
-              type="text"
-              placeholder="Add new task..."
-              name="title"
-              required
-              value={title}
-              disabled={loading}
-              onChange={(e) => setTitle(e.target.value)}
+      <form onSubmit={()=>handleSubmit(item.id)}>
+        <div>
+          <input
+            className="textInput"
+            type="text"
+            placeholder={title}
+            name="title"
+            required
+            value={title}
+            onChange={(e)=>setTitle(e.target.value)}
+          />
+          <div className="colum-display textarea">
+            <label className="label">Description</label>
+            <textarea
+              className="textareaInput"
+              rows="8"
+              name="description"
+              placeholder={description}
+              value={description}
+              onChange={(e)=>setDescription(e.target.value)}
             />
-            <div className="colum-display textarea">
-              <label className="label">Description</label>
-              <textarea
-                className="textareaInput"
-                rows="8"
-                name="description"
-                value={description}
-                disabled={loading}
-                onChange={(e) => setDescription(e.target.value)}
+          </div>
+
+          <div className="row">
+            <div className="colum-display width45">
+              <label className="label">Due Date</label>
+              <input
+                className="dateInput"
+                type="date"
+                defaultValue={dueDate}
+                value={dueDate}
+                onChange={(e)=> setDueDate(e.target.value)}
+                name="dueDate"
               />
             </div>
-
-            <div className="row">
-              <div className="colum-display width45">
-                <label className="label">Due Date</label>
-                <input
-                  className="dateInput"
-                  type="date"
-                  defaultValue={date}
-                  value={dueDate}
-                  disabled={loading}
-                  onChange={(e) => setDueDate(e.target.value)}
-                  name="dueDate"
-                />
-              </div>
-              <div className="colum-display width45">
-                <label className="label">Priority</label>
-                <select
-                  className="priorityInput"
-                  name="priority"
-                  value={priority}
-                  onChange={(e) => setPriority(e.target.value)}
-                >
-                  <option value="low">Low</option>
-                  <option value="normal">Normal</option>
-                  <option value="high">High</option>
-                </select>
-              </div>
+            <div className="colum-display width45">
+              <label className="label">Priority</label>
+              <select
+                className="priorityInput"
+                name="priority"
+                value={priority}
+                onChange={(e)=>setPriority(e.target.value)}
+              >
+                <option value="low">Low</option>
+                <option value="normal">Normal</option>
+                <option value="high">High</option>
+              </select>
             </div>
+          </div>
+          <div className='view-detail-btn'>
             {loading ? (
               <Button disabled="true" size="small">
                 Updating...
               </Button>
             ) : (
-              <Button type="submit" size="small">
+              <Button type="submit" size="small" >
                 UPDATE
               </Button>
             )}
-            <Button size='small'>CANCEl</Button>
+            <Button onClick={handleClose} size="small">CANCEl</Button>
           </div>
-        </form>
+        </div>
+      </form>
     </div>
-  )
-}
+  );
+};
 
-export default ToDoDetails
+export default ToDoDetails;

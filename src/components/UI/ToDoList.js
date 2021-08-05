@@ -2,23 +2,25 @@ import React, { useContext, useState, useEffect } from "react";
 import "./ToDoList.css";
 import { TodoContext } from "../context/TodoContext";
 import Button from "../shared/Button";
-import { ACTIONS } from "../reducer/TodoReducer";
-import { HiOutlineTrash } from "react-icons/hi";
 import Search from "../shared/Search";
+import TodoCard from "../UI/TodoCard";
 
 const ToDoList = () => {
   const { todos, dispatch } = useContext(TodoContext);
-  const [filterTodos, setFilteredTodos] = useState([]);
-
+  const [filteredTodos, setFilteredTodos] = useState([]);
   const [searchInput, setSearchInput] = useState("");
 
   const handleSearchChange = (e) => {
     setSearchInput(e.target.value);
   };
+
   useEffect(() => {
-    let newTodos = todos.filter((t) =>
-      t.title.toLowerCase().startsWith(searchInput.toLowerCase())
-    ).sort((a,b)=> new Date(a.dueDate) - new Date(b.dueDate));
+    console.log(todos);
+    let newTodos = todos
+      .filter((t) =>
+        t.title.toLowerCase().startsWith(searchInput.toLowerCase())
+      )
+      .sort((a, b) => new Date(a.dueDate) - new Date(b.dueDate));
     setFilteredTodos(newTodos);
   }, [searchInput, todos]);
 
@@ -27,43 +29,19 @@ const ToDoList = () => {
       <h2>To Do List</h2>
       <Search searchInput={searchInput} onChange={handleSearchChange}></Search>
       <div className="todo-list">
-        <ul>
-          {filterTodos.map((item) => (
-            <li key={item.id}>
-              <div className="todo-item">
-                <input
-                  className="checkbox"
-                  type="checkbox"
-                  
-                />
-                <p className="checkbox-title">{item.title.charAt(0).toUpperCase() + item.title.slice(1)}</p>
-              </div>
-              <div className="todo-item">
-                <Button inverse="inverse" size="small">
-                  View
-                </Button>
-                <Button
-                  danger="danger"
-                  size="small"
-                  onClick={() =>
-                    dispatch({
-                      type: ACTIONS.REMOVE,
-                      payload: {
-                        id: item.id,
-                      },
-                    })
-                  }
-                >
-                  <HiOutlineTrash />
-                </Button>
-              </div>
-            </li>
-          ))}
-        </ul>
+        {filteredTodos.length !== 0 ? (
+          filteredTodos.map((item) => (
+            <div className='card-wraper'>
+              <TodoCard item={item} dispatch={dispatch} />
+            </div>
+          ))
+        ) : (
+          <p>You have no todos at the moment.</p>
+        )}
       </div>
       <div className="bulk-action">
         <p>Bulk Action:</p>
-        <div className='bulk-action__button'>
+        <div className="bulk-action__button">
           <Button inverse="inverse" size="small">
             Done
           </Button>
