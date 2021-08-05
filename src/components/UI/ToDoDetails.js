@@ -3,7 +3,7 @@ import Button from "../shared/Button";
 import { ACTIONS } from "../reducer/TodoReducer";
 import { HiOutlineX } from "react-icons/hi";
 
-const ToDoDetails = ({ item, handleClose, dispatch }) => {
+const ToDoDetails = ({ item, handleClose, dispatch}) => {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [title, setTitle] = useState(item.title);

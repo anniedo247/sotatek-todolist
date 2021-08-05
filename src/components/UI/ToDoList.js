@@ -18,7 +18,7 @@ const ToDoList = () => {
     console.log(todos);
     let newTodos = todos
       .filter((t) =>
-        t.title.toLowerCase().startsWith(searchInput.toLowerCase())
+        t.title.toLowerCase().includes(searchInput.toLowerCase())
       )
       .sort((a, b) => new Date(a.dueDate) - new Date(b.dueDate));
     setFilteredTodos(newTodos);
@@ -32,7 +32,7 @@ const ToDoList = () => {
         {filteredTodos.length !== 0 ? (
           filteredTodos.map((item) => (
             
-              <TodoCard item={item} dispatch={dispatch} />
+              <TodoCard item={item} dispatch={dispatch}/>
            
           ))
         ) : (
@@ -50,6 +50,7 @@ const ToDoList = () => {
           </Button>
         </div>
       </div>
+      
     </div>
   );
 };
