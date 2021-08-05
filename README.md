@@ -4,7 +4,7 @@
   - [Introduction](#introduction)
   - [Main features](#main-features)
   - [Technologies](#technologies)
-  - [Screenshot/Gifs](#screenshotgifs)
+  - [Screenshot](#screenshot)
   - [Available Scripts](#available-scripts)
     - [`npm start`](#npm-start)
     - [`npm test`](#npm-test)
