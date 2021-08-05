@@ -1,9 +1,8 @@
-/* * {
-  box-sizing: border-box;
-} */
+@import url('https://fonts.googleapis.com/css2?family=Proza+Libre&display=swap');
+
 .main-container {
   margin-top: 50px;
-  min-height: 100vh;
+ min-height: 100vh;
   width: 75%;
   border: 0.01px solid black;
   display: flex;
@@ -13,7 +12,8 @@
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
-  
+  font-family:'Proza Libre', sans-serif;
+  font-size: 14px;
 }
 .main-container__item {
   border: 0.01px solid black;
@@ -71,7 +71,6 @@
   margin-right: 20px;
   margin-left: 20px;
   margin-bottom: 20px;
-  
 
 }
 .textareaInput:focus {
@@ -89,8 +88,7 @@
   
 }
 .label {
-font-family: '"Proza Libre",sans-serif';
-font-size: 12px;
+font-size: 14px;
 font-weight: bold;
 font-style: normal;
 text-decoration: none;

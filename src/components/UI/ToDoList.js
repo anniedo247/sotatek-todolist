@@ -46,12 +46,12 @@ const ToDoList = () => {
                 <div className="bulk-action">
                   <p>Bulk Action:</p>
                   <div className="bulk-action__button">
-                    <Button inverse="inverse" size="small">
+                    <Button inverse="inverse" size="medium">
                       Done
                     </Button>
                     <Button
                       danger="danger"
-                      size="small"
+                      size="medium"
                       onClick={handleBatchDelete}
                     >
                       Remove

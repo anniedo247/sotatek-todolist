@@ -53,17 +53,17 @@
 }
 
 .button--small {
-  font-size: 0.8rem;
- width: 70px;
+ font-size: 14px;
+  width: 80px;
 }
 .button--medium {
-  font-size: 0.8rem;
+  font-size:14px;
  width: 100px;
  margin-bottom: 10px;
 }
 
 .button--big {
-  font-size: 12px;
+  font-size: 14px;
   height: 30px;
   width: -webkit-fill-available;
   margin-left: 20px;
