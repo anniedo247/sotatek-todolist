@@ -56,12 +56,17 @@
   font-size: 0.8rem;
  width: 70px;
 }
+.button--medium {
+  font-size: 0.8rem;
+ width: 100px;
+ margin-bottom: 10px;
+}
 
 .button--big {
   font-size: 12px;
   height: 30px;
   width: -webkit-fill-available;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
   margin-bottom: 20px;
 }

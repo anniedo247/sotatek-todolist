@@ -30,11 +30,11 @@
 
 @media only screen and (min-width: 768px){
   .left {
-    width: 40%;
+    width: 50%;
   }
   
   .right {
-    width: 60%;
+    width: 50%;
   }
   .main-container {
     flex-direction: row;
@@ -44,8 +44,8 @@
 
 .row {
   display: flex;
-  margin-right: 10px;
-  margin-left: 10px;
+  margin-right: 20px;
+  margin-left: 20px;
   margin-bottom: 25px;
   justify-content: space-between;
   align-items: center;
@@ -56,20 +56,20 @@
   text-align: left;
 }
 .textInput {
-  width: 93%;
+  width: 90%;
   margin-right: 10px;
   margin-left: 10px;
   height: 30px;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   outline: none;
 }
 .textInput:focus {
   border: 1px solid rgba(3, 109, 3, 0.363);
 }
 .textarea {
-  margin-right: 10px;
-  margin-left: 10px;
-  margin-bottom: 25px;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
   
 
 }

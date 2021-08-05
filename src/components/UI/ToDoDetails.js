@@ -66,11 +66,11 @@ const ToDoDetails = ({item,handleClose,handleSubmit}) => {
                 Updating...
               </Button>
             ) : (
-              <Button type="submit" size="small" >
+              <Button type="submit" size="medium" >
                 UPDATE
               </Button>
             )}
-            <Button onClick={handleClose} size="small">CANCEl</Button>
+            <Button onClick={handleClose} size="medium" danger='danger' className='detail-btn'>CANCEl</Button>
           </div>
         </div>
       </form>

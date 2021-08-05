@@ -31,9 +31,9 @@ const ToDoList = () => {
       <div className="todo-list">
         {filteredTodos.length !== 0 ? (
           filteredTodos.map((item) => (
-            <div className='card-wraper'>
+            
               <TodoCard item={item} dispatch={dispatch} />
-            </div>
+           
           ))
         ) : (
           <p>You have no todos at the moment.</p>

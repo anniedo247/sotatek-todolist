@@ -5,17 +5,25 @@ import { HiOutlineTrash } from "react-icons/hi";
 import Button from "../shared/Button";
 import ToDoDetails from "./ToDoDetails";
 
-export const TodoCard = ({ item, dispatch, handleClose, handleOpen }) => {
+export const TodoCard = ({ item, dispatch, handleClose }) => {
   const [showDetails, setShowDetails] = useState(false);
 
+
+  const handleUpdate = (e) => {
+    
+  }
+
   return (
-    <div className='todo-card'>
-      <div className="todo-item">
+    <React.Fragment>
+      <div className={showDetails? 'card-wraper' : 'card-wraper__close'}>
+      <div className="todo-card__wraper">
+      <div className='todo-card'>
+     <div className="todo-item">
         <input className="checkbox" type="checkbox" />
         <p className="checkbox-title">
           {item.title.charAt(0).toUpperCase() + item.title.slice(1)}
         </p>
-      </div>
+      </div> 
       <div className="todo-item">
         <Button inverse="inverse" size="small" onClick={()=>setShowDetails(true)}>
           View
@@ -34,10 +42,19 @@ export const TodoCard = ({ item, dispatch, handleClose, handleOpen }) => {
         >
           <HiOutlineTrash />
         </Button>
-      </div>
-      {showDetails && <ToDoDetails handleClose={()=>setShowDetails(false)} item={item} />}
+    </div>
       
     </div>
+      </div>
+
+    <div>
+      {showDetails && <ToDoDetails item={item} handleClose={handleClose} handleSubmit={handleUpdate}/>}
+    </div>
+      </div>
+      
+    
+    </React.Fragment>
+    
   );
 };
 export default TodoCard;
