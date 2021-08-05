@@ -20,11 +20,11 @@
 
 ## Introduction
 
-This project is a a to-do list app, bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a to-do app, bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Main features
 
-- Allows a user to add new task to the to-do list.
+- Allow a user to add new task to the to-do list.
 - View and update existing ones.
 - Bulk actions: remove multiple tasks, unselected multiple tasks.
 
@@ -41,7 +41,7 @@ This project is a a to-do list app, bootstrapped with [Create React App](https:/
 
 ![Home](assets/todo-screenshot1.png)
 
-![Bulk Actions](assets/todo-screenshot1.png)
+![Bulk Actions](assets/todo-screenshot2.png)
 
 ## Available Scripts
 
