@@ -37,7 +37,7 @@ This project is a to-do app, bootstrapped with [Create React App](https://github
 - Styling with CSS
 - _uuid_ package for generating random IDs, which are then used to differentiate each to-do item, and acts as the slug for to-do items
 
-## Screenshot/Gifs
+## Screenshot
 
 ![Home](assets/todo-screenshot1.png)
 
