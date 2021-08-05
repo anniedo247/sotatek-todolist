@@ -5,7 +5,7 @@ import { HiOutlineTrash } from "react-icons/hi";
 import Button from "../shared/Button";
 import ToDoDetails from "./ToDoDetails";
 
-export const TodoCard = ({ item, dispatch,checked,onToggle }) => {
+export const TodoCard = ({ item, dispatch}) => {
   const [showDetails, setShowDetails] = useState(false);
   
 
@@ -23,7 +23,7 @@ export const TodoCard = ({ item, dispatch,checked,onToggle }) => {
                 className="checkbox"
                 type="checkbox"
                 id={item.id}
-                defaultChecked={item.selected}
+                checked={item.selected}
                 onClick={() =>
                   dispatch({
                     type: ACTIONS.TOGGLE,
