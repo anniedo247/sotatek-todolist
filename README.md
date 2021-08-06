@@ -56,11 +56,15 @@ This project is a to-do app, bootstrapped with [Create React App](https://github
 - Desktop screen
 
 ![Home](assets/todo-screenshot1.png)
+
+
 ![Bulk Actions](assets/todo-screenshot2.png)
 
 - Mobile screen
 
 ![Resonsive](assets/todo-screenshot3.png)
+
+
 ![Resonsive](assets/todo-screenshot4.png)
 
 
