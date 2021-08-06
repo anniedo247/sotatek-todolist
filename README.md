@@ -2,8 +2,9 @@
 
 - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
-  - [Functional Requirements](#funtional-requirements)
-  - [Nonfunctional Requirements](#nonfuntional-requirements)
+  - [Functional Requirements](#functional-requirements)
+  - [Nonfunctional Requirements](#nonfunctional-requirements)
+  - [Features to improve](#features-to-improve)
   - [Technologies](#technologies)
   - [Screenshot](#screenshot)
   - [Available Scripts](#available-scripts)
@@ -38,6 +39,10 @@ This project is a to-do app, bootstrapped with [Create React App](https://github
 - No CSS libraries for styling.
 - Responsive for different devices.
 
+## Features to improve
+
+- Pagination for task list
+
 ## Technologies
 
 - React for UI components
@@ -45,7 +50,7 @@ This project is a to-do app, bootstrapped with [Create React App](https://github
 - useState hook for managing changes in state
 - Local storage for persisting data
 - Styling with CSS
-- _uuid_ package for generating random IDs, which are then used to differentiate each to-do item, and acts as the slug for to-do items
+- uuid package for generating random IDs, which are then used to differentiate each to-do item, and acts as the slug for to-do items
 
 ## Screenshot
 - Desktop screen
@@ -88,7 +93,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+*Note: this is a one-way operation. Once you `eject`, you can’t go back!*
 
 If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
