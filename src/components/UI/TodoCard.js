@@ -23,7 +23,7 @@ export const TodoCard = ({ item, dispatch }) => {
       <div className={showDetails ? "card-wraper" : "card-wraper__close"}>
         <div className="todo-card__wraper">
           <div className="todo-card">
-            <div className="todo-item">
+            <div className="todo-item__title">
               <input
                 className="checkbox"
                 type="checkbox"
@@ -45,7 +45,7 @@ export const TodoCard = ({ item, dispatch }) => {
                 )}
               </p>
             </div>
-            <div className="todo-item">
+            <div className="todo-item__btn">
               <Button
                 inverse="inverse"
                 size="small"

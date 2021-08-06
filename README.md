@@ -48,9 +48,13 @@ This project is a to-do app, bootstrapped with [Create React App](https://github
 - _uuid_ package for generating random IDs, which are then used to differentiate each to-do item, and acts as the slug for to-do items
 
 ## Screenshot
+- Desktop screen
 
 ![Home](assets/todo-screenshot1.png)
 ![Bulk Actions](assets/todo-screenshot2.png)
+
+- Mobile screen
+
 ![Resonsive](assets/todo-screenshot3.png)
 ![Resonsive](assets/todo-screenshot4.png)
 

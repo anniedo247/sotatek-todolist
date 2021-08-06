@@ -40,7 +40,11 @@
     height: 90px;
     flex-direction: column;
   }
-  .todo-item {
+  .todo-item__title {
+    justify-content: start;
+    padding-top: 0;
+  }
+  .todo-item__btn {
     justify-content: center;
     padding-top: 0;
     padding-bottom: 5px;
@@ -50,7 +54,12 @@
   }
 }
 
-.todo-item {
+.todo-item__title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.todo-item__btn {
   display: flex;
   flex-direction: row;
   align-items: center;
