@@ -38,7 +38,6 @@ const ToDoList = () => {
               <TodoCard item={item} dispatch={dispatch} />
               {item.selected && (
                 <div className="bulk-action">
-                  <p>Bulk Action:</p>
                   <div className="bulk-action__button">
                     <Button
                       inverse="inverse"

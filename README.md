@@ -2,7 +2,8 @@
 
 - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
-  - [Main features](#main-features)
+  - [Functional Requirements](#funtional-requirements)
+  - [Nonfunctional Requirements](#nonfuntional-requirements)
   - [Technologies](#technologies)
   - [Screenshot](#screenshot)
   - [Available Scripts](#available-scripts)
@@ -22,12 +23,20 @@
 
 This project is a to-do app, bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Main features
+
+## Functional Requirements
 
 - Allow a user to add new task to the to-do list.
 - User can search tasks by task title.
 - View and update existing ones.
 - Bulk actions: remove multiple tasks, unselected multiple tasks.
+
+## Nonfunctional Requirements
+
+- Use ReactJS/Angular/Vuejs to implement the app.
+- Data is stored in LocalStorage.
+- No CSS libraries for styling.
+- Responsive for different devices.
 
 ## Technologies
 
@@ -41,8 +50,10 @@ This project is a to-do app, bootstrapped with [Create React App](https://github
 ## Screenshot
 
 ![Home](assets/todo-screenshot1.png)
-
 ![Bulk Actions](assets/todo-screenshot2.png)
+![Resonsive](assets/todo-screenshot3.png)
+![Resonsive](assets/todo-screenshot4.png)
+
 
 ## Available Scripts
 
